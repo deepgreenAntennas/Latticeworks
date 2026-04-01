@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latticeworks - Final Fantasy Lattice Items</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: #0a0a1a;
+            color: #e0e0ff;
+            line-height: 1.6;
+            padding: 20px;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(28, 58, 133, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(78, 15, 97, 0.15) 0%, transparent 40%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #3a3a6a;
+        }
+        
+        h1 {
+            font-size: 42px;
+            color: #ffcc00;
+            text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        
+        .subtitle {
+            font-size: 20px;
+            color: #a0a0ff;
+            margin-bottom: 20px;
+        }
+        
+        .intro {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            text-align: center;
+            font-size: 18px;
+            color: #b8b8ff;
+            line-height: 1.8;
+        }
+        
+        .category {
+            margin-bottom: 50px;
+            background: rgba(20, 20, 40, 0.7);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+        
+        .category-title {
+            font-size: 32px;
+            color: #ff9900;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3a3a6a;
+            text-shadow: 0 0 8px rgba(255, 153, 0, 0.4);
+        }
+        
+        .items-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+        }
+        
+        .item {
+            background: rgba(30, 30, 60, 0.7);
+            border-radius: 8px;
+            padding: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 4px solid #5a5aaa;
+        }
+        
+        .item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            border-left: 4px solid #ffcc00;
+        }
+        
+        .item-name {
+            font-size: 22px;
+            color: #ffcc00;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .item-type {
+            display: inline-block;
+            background: #3a3a8a;
+            color: #c0c0ff;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .item-desc {
+            color: #d0d0ff;
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+        
+        .item-stats {
+            color: #a0a0ff;
+            font-size: 14px;
+            font-style: italic;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 30px 0;
+            border-top: 2px solid #3a3a6a;
+            color: #8888cc;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .items-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 32px;
+            }
+            
+            .category-title {
+                font-size: 28px;
+            }
+        }
+        
+        .search-box {
+            max-width: 500px;
+            margin: 0 auto 40px;
+        }
+        
+        #search {
+            width: 100%;
+            padding: 15px;
+            border-radius: 30px;
+            border: 2px solid #5a5aaa;
+            background: rgba(20, 20, 40, 0.7);
+            color: #e0e0ff;
+            font-size: 16px;
+            outline: none;
+        }
+        
+        #search:focus {
+            border-color: #ffcc00;
+            box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+        }
+        
+        .highlight {
+            background-color: rgba(255, 204, 0, 0.3);
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Latticeworks</h1>
+            <div class="subtitle">Final Fantasy Lattice Items Encyclopedia</div>
+        </header>
+        
+        <div class="intro">
+            <p>Welcome to the comprehensive database of items from the Final Fantasy Lattice universe. This collection contains weapons, armor, accessories, consumables, and rare artifacts that define the gameplay experience across multiple dimensions of the Lattice.</p>
+        </div>
+        
+        <div class="search-box">
+            <input type="text" id="search" placeholder="Search for items...">
+        </div>
+        
+        <div class="category">
+            <h2 class="category-title">Weapons</h2>
+            <div class="items-grid">
+                <div class="item">
+                    <h3 class="item-name">Ultima Blade</h3>
+                    <span class="item-type">Sword</span>
+                    <p class="item-desc">A legendary sword forged from crystallized Lattice energy. It resonates with the wielder's inner strength, growing more powerful as the battle progresses.</p>
+                    <p class="item-stats">ATK: 98, MATK: 45, Special: Increases damage with each consecutive hit</p>
+                </div>
+                
+                <div class="item">
+                    <h3 class="item-name">Aetherial Staff</h3>
+                    <span class="item-type">Staff</span>
+                    <p class="item-desc">Crafted from the branch of the World Tree and infused with elemental energies. It allows the wielder to cast spells without consuming MP for a short time.</p>
+                    <p class="item-stats">ATK: 32, MATK: 110, Special: 10% chance to cast spells at no MP cost</p>
+                </div>
+                
+                <div class="item">
+                    <h3 class="item-name">Dragon's Claw</h3>
+                    <span class="item-type">Knuckle</span>
+                    <p class="item-desc">Gauntlets fashioned from the scales of the great wyrm Bahamut. They channel draconic energy into devastating physical attacks.</p>
+                    <p class="item-stats">ATK: 85, MATK: 20, Special: Adds fire damage to physical attacks</p>
+                </div>
+                
+                <div class="item">
+                    <h3 class="item-name">Odin's Spear</h3>
+                    <span class="item-type">Polearm</span>
+                    <p class="item-desc">A spear that once belonged to the legendary horseman Odin. It has a chance to instantly defeat any opponent when landing a critical hit.</p>
+                    <p class="item-stats">ATK: 92, MATK: 30, Special: 5% chance to instantly defeat non-boss enemies</p>
+                </div>
+                
+                <div class="item">
+                    <h3 class="item-name">Artemis Bow</h3>
+                    <span class="item-type">Bow</span>
+                    <p class="item-desc">A celestial bow that never misses its mark. Its arrows are fashioned from light and seek out the weaknesses of the target.</p>
+                    <p class="item-stats">ATK: 88, MATK: 40, Special: Always hits enemy weak points</p>
+                </div>
+                
+                <div class="item">
+                    <h3 class="item-name">Chaos Revolver</h3>
+                    <span class="item-type">Gun</span>
+                    <p class="item-desc">A mysterious firearm that fires bullets infused with chaotic energy. Each shot has random elemental properties.</p>
+                    <p class="item-stats">ATK: 78, MATK: 55, Special: Random elemental damage with each shot</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="category">
+            <h2 class="category-title">Armor</h2>
+            <div class="items-grid">
+                <div class="item">
+                    <h3 class="item-name">Aegis Shield</h3>
+                    <span class="item-type">Shield</span>
+                    <p class="item-desc">A legendary shield said to have been blessed by the gods. It can automatically cast Protect and Shell on the wielder when in danger.</p>
+                    <p class="item-stats">DEF: 95, MDEF: 90, Special: Auto-casts Protect and Shell at low HP</p>
+                </div>
+                
+                <div class="item">
+                    <h3 class="item-name">Crystal Mail</h3>
+                    <span class="item-type">Body Armor</span>
+                    <p class="item-desc">Armor forged from the crystals of the Lattice. It absorbs elemental damage and converts it to HP for the wearer.</p>
+                    <p class="item-stats">DEF: 88, MDEF: 85, Special: Absorbs all elemental damage</p>
+                </div>
+                
+                <div class="item">
+                    <h3 class="item-name">Genji Helmet</h3>
+                    <span class="item-type">Headgear</span>
+                    <p class="item-desc">Part of the legendary Genji set, this helmet grants the wearer heightened senses and awareness in battle.</p>
+                    <p class="item-stats">DEF: 45, MDEF: 50, Special: Prevents confusion and blindness</p>
+                </div>
+                
+                <div class="item">
+                    <h3 class="item-name">Hermes Sandals</h3>
+                    <span class="item-type">Footwear</span>
+                    <p class="item-desc">Enchanted boots that grant the wearer incredible speed. They allow the wearer to act more frequently in battle.</p>
+                    <p class="item-stats">DEF: 35, MDEF: 40, Special: Permanent Haste status</p>
+                </div>
+                
+                <div class="item">
+                    <h3 class="item-name">Dragonhide Mantle</h3>
+                    <span class="item-type">Cloak</span>
+                    <p class="item-desc">A cloak fashioned from the hide of an ancient dragon. It provides resistance against all elemental attacks.</p>
+                    <p class="item-stats">DEF: 60, MDEF: 70, Special: Reduces elemental damage by 50%</p>
+                </div>
+                
+                <div class="item">
+                    <h3 class="item-name">Gaia Gear</h3>
+                    <span class="item-type">Robe</span>
+                    <p class="item-desc">Robes woven from the fibers of the Earth Crystal. They strengthen earth-based magic and protect against environmental hazards.</p>
+                    <p class="item-stats">DEF: 55, MDEF: 95, Special: Enhances earth magic and grants immunity to petrification</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="category">
+            <h2 class="category-title">Accessories</h2>
+            <div class="items-grid">
+                <div class="item">
+                    <h3 class="item-name">Ribbon</h3>
+                    <span class="item-type">Accessory</span>
+                    <p class="item-desc">A seemingly ordinary ribbon that provides complete immunity to all status ailments. Highly sought after by adventurers.</p>
+                    <p class="item-stats">Special: Immunity to all status effects</p>
+                </div>
+                
+                <div class="item">
+                    <h3 class="item-name">Champion's Belt</h3>
+                    <span class="item-type">Accessory</span>
+                    <p class="item-desc">A belt worn by champions of the arena. It greatly enhances physical capabilities and resilience.</p>
+                    <p class="item-stats">Special: +20% to STR and VIT</p>
+                </div>
+                
+                <div class="item">
+                    <h3 class="item-name">Sage's Earring</h3>
+                    <span class="item-type">Accessory</span>
+                    <p class="item-desc">An earring that enhances the wearer's magical abilities and reduces MP consumption.</p>
+                    <p class="item-stats">Special: +20% to INT and MND, 25% reduced MP cost</p>
+                </div>
+                
+                <div class="item">
+                    <h3 class="item-name">Thief's Gloves</h3>
+                    <span class="item-type">Accessory</span>
+                    <p class="item-desc">These gloves increase dexterity and chances of successful theft. Essential for any aspiring treasure hunter.</p>
+                    <p class="item-stats">Special: +25% steal success rate, +15 DEX</p>
+                </div>
+                
+                <div class="item">
+                    <h3 class="item-name">Angel Wing</h3>
+                    <span class="item-type">Accessory</span>
+                    <p class="item-desc">A feather from an angel's wing that allows the wearer to avoid fatal attacks occasionally.</p>
+                    <p class="item-stats">Special: 10% chance to automatically revive with full HP when KO'd</p>
+                </div>
+                
+                <div class="item">
+                    <h3 class="item-name">Lattice Pendant</h3>
+                    <span class="item-type">Accessory</span>
+                    <p class="item-desc">A pendant containing a shard of the Lattice Crystal. It harmonizes the wearer's energies with the world.</p>
+                    <p class="item-stats">Special: Gradually restores HP and MP</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="category">
+            <h2 class="category-title">Consumables</h2>
+            <div class="items-grid">
+                <div class="item">
+                    <h3 class="item-name">Potion</h3>
+                    <span class="item-type">Consumable</span>
+                    <p class="item-desc">A basic healing item that restores a small amount of HP. Essential for any adventurer's inventory.</p>
+                    <p class="item-stats">Effect: Restores 100 HP</p>
+                </div>
+                
+                <div class="item">
+                    <h3 class="item-name">Hi-Potion</h3>
+                    <span class="item-type">Consumable</span>
+                    <p class="item-desc">An improved version of the standard potion that restores a moderate amount of HP.</p>
+                    <p class="item-stats">Effect: Restores 500 HP</p>
+                </div>
+                
+                <div class="item">
+                    <h3 class="item-name">Ether</h3>
+                    <span class="item-type">Consumable</span>
+                    <p class="item-desc">A rare concoction that restores MP. Prized by magic users who rely on their mystical energies.</p>
+                    <p class="item-stats">Effect: Restores 50 MP</p>
+                </div>
+                
+                <div class="item">
+                    <h3 class="item-name">Elixir</h3>
+                    <span class="item-type">Consumable</span>
+                    <p class="item-desc">A legendary item that completely restores HP and MP for one party member. Extremely rare.</p>
+                    <p class="item-stats">Effect: Fully restores HP and MP</p>
+                </div>
+                
+                <div class="item">
+                    <h3 class="item-name">Phoenix Down</h3>
+                    <span class="item-type">Consumable</span>
+                    <p class="item-desc">A feather from a phoenix that can revive a fallen party member. Does not work on those petrified.</p>
+                    <p class="item-stats">Effect: Revives a KO'd ally with 50% HP</p>
+                </div>
+                
+                <div class="item">
+                    <h3 class="item-name">Antidote</h3>
+                    <span class="item-type">Consumable</span>
+                    <p class="item-desc">A medicinal compound that cures poison and venomous ailments.</p>
+                    <p class="item-stats">Effect: Cures poison</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="category">
+            <h2 class="category-title">Key Items</h2>
+            <div class="items-grid">
+                <div class="item">
+                    <h3 class="item-name">Lattice Shard</h3>
+                    <span class="item-type">Key Item</span>
+                    <p class="item-desc">A fragment of the great Lattice Crystal. These shards are said to hold immense power and are central to the world's balance.</p>
+                </div>
+                
+                <div class="item">
+                    <h3 class="item-name">Crystal Key</h3>
+                    <span class="item-type">Key Item</span>
+                    <p class="item-desc">A key fashioned from crystal that unlocks ancient doors and hidden passages throughout the world.</p>
+                </div>
+                
+                <div class="item">
+                    <h3 class="item-name">Airship License</h3>
+                    <span class="item-type">Key Item</span>
+                    <p class="item-desc">Official documentation permitting the bearer to operate an airship. Without this, flying is strictly prohibited.</p>
+                </div>
+                
+                <div class="item">
+                    <h3 class="item-name">Moogle Charm</h3>
+                    <span class="item-type">Key Item</span>
+                    <p class="item-desc">A charm given by moogles that reduces random enemy encounters. Highly valued by explorers.</p>
+                </div>
+                
+                <div class="item">
+                    <h3 class="item-name">Tome of Wisdom</h3>
+                    <span class="item-type">Key Item</span>
+                    <p class="item-desc">An ancient book containing forgotten knowledge and spells. Required to access hidden magical abilities.</p>
+                </div>
+                
+                <div class="item">
+                    <h3 class="item-name">Earth Medal</h3>
+                    <span class="item-type">Key Item</span>
+                    <p class="item-desc">A medal proving mastery over earth-based challenges. Collecting all elemental medals unlocks great power.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Final Fantasy Lattice and all associated items are fictional properties. This encyclopedia is a fan-created resource.</p>
+            <p>© 2023 Latticeworks Encyclopedia | All item descriptions are works of fiction</p>
+        </div>
+    </div>
+
+    <script>
+        // Simple search functionality
+        document.getElementById('search').addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const items = document.querySelectorAll('.item');
+            
+            items.forEach(item => {
+                const itemName = item.querySelector('.item-name').textContent.toLowerCase();
+                const itemDesc = item.querySelector('.item-desc').textContent.toLowerCase();
+                const itemStats = item.querySelector('.item-stats')?.textContent.toLowerCase() || '';
+                
+                if (itemName.includes(searchTerm) || itemDesc.includes(searchTerm) || itemStats.includes(searchTerm)) {
+                    item.style.display = 'block';
+                    
+                    // Highlight the matching text
+                    if (searchTerm.length > 2) {
+                        const regex = new RegExp(searchTerm, 'gi');
+                        item.innerHTML = item.innerHTML.replace(regex, match => 
+                            `<span class="highlight">${match}</span>`
+                        );
+                    }
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
